@@ -1,0 +1,104 @@
+<html>
+<head lang="{{ lang }}">
+   <title>Bare På 13</title>
+   <meta name="description" content="{{ description }}">
+
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+   <link href='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' rel='stylesheet' type='text/css'>
+
+   <link href="{{ fingerprint.[stylesheets/screen.css] }}" rel="stylesheet" type="text/css" />
+
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+   <link rel="canonical" href="{{ path }}" />
+   <meta name="viewport" content="initial-scale=1">
+</head>
+
+<body>
+   <header id="top" class="site-header" role="banner">
+      <a href="#">
+         <h1 class="site-title">
+            <img class="site-logo" src="images/logo.svg" alt="{{ title }}"/>
+         </h1>
+      </a>
+
+      <a class="navigation-btn" href="#nav">Menu</a>
+
+      <nav id="nav" class="site-navigation">
+         <nav class="lang-navigation">
+            <a href="/">NO</a> / <a href="/en">EN</a>
+         </nav>
+
+         {{#each headings}}
+            <a class="navigation-item" href="#{{id}}">{{ text }}</a>
+         {{/each }}
+
+         <a class="close-btn" href="#">Back to content</a>
+      </nav>
+
+      <nav id="social" class="social-navigation">
+         <a href="https://www.facebook.com/barepaa13" class="navigation-item"><img src="images/facebook.svg" /></a>
+         <a href="https://twitter.com/barepaa13/" class="navigation-item"><img src="images/twitter.svg" /></a>
+         <a href="http://instagram.com/barepaa13/" class="navigation-item"><img src="images/instagram.svg" /></a>
+      </nav>
+   </header>
+
+   <main id="content" class="site-content">
+      {{{ contents }}}
+   </main>
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+   <script type="text/javascript">
+      /* Reservation popup */
+	   $(".fancybox").fancybox({
+	      type: "iframe",
+		   maxWidth	: 800,
+		   maxHeight	: 600,
+		   fitToView	: false,
+		   width		: '70%',
+		   height		: '70%',
+		   autoSize	: false,
+		   closeClick	: false,
+		   openEffect	: 'none',
+		   closeEffect	: 'none'
+	   });
+      
+      /* Smooth scroll local links */
+      $('a[href*=#]:not([href=#])').click(function() {
+         $('.site-header .site-navigation').removeClass('open');
+               
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+               $('html, body').animate({
+                  scrollTop: target.offset().top
+                 }, 250);
+                 
+           return false;
+         }
+       }
+     });
+
+      /* Open site navigation */
+      $('.site-header .navigation-btn').on('click', function(ev) {
+         $('.site-header .site-navigation').addClass('open');
+         return false;
+      });
+
+      /* Close site navigation */
+      $('.site-header .close-btn').on('click', function(ev) {
+         $('.site-header .site-navigation').removeClass('open');
+         return false;
+      });
+      
+      /* Popup links with data-role popup */
+      $('a[data-role*=popup]').on('click', function(ev) {
+         return false;
+      });
+   </script>
+</body>
+</html>

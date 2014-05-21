@@ -1,0 +1,262 @@
+/* Reset */
+* {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   margin: 0;
+   padding: 0;
+}
+
+/* Typography */
+html {
+   font-family: 'Josefin Sans', sans-serif;
+   font-size: 18px;
+   line-height: 1.5;
+   color: #383A3F;
+}
+
+@media (min-width: 38em) {
+   html {
+      font-size: 24px;
+   }
+}
+
+a {
+   color: #686c75;
+   text-decoration: none;
+}
+
+h1, h2, h3, h5, h6 {
+   font-weight: 300;
+   text-rendering: optimizeLegibility;
+   text-transform: uppercase;
+   font-weight: normal;
+   margin-bottom: 2rem;
+}
+
+a:hover {
+   color: #4d5056;
+}
+
+a:focus {
+   outline: 0;
+}
+
+p {
+   margin-left: 2rem;
+   margin-right: 2rem;
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+/* Media */
+img {
+   max-width: 100%;
+}
+
+/* Banner */
+.site-header {
+   text-align: center;
+}
+
+.site-title {
+   text-align: center;
+}
+
+.site-logo {
+   margin: auto;
+   height: 40%;
+}
+
+@media (max-width: 48rem) {
+   .site-header {
+      padding-top: 3rem;
+   }
+}
+
+@media (min-width: 48rem) {
+   .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 18rem;
+      text-align: left;
+   }
+}
+
+/* Navigation */
+.site-navigation {
+   background-color: #ffffff;
+}
+
+.navigation-item {
+   position: relative;
+   display: block;
+   margin: 15px 25px;
+   outline: none;
+
+   text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 1px;
+   font-weight: 300;
+   text-shadow: 0 0 1px rgba(255,255,255,0.3);
+   font-size: 1.35em;
+}
+
+.social-navigation {
+   display: block;
+   text-align: center;
+}
+
+
+
+.social-navigation .navigation-item {
+   display: inline-block;
+   margin: 1.25em;
+   width: 1.5em;
+}
+
+@media (max-width: 48rem) {
+   .navigation-btn,
+   .close-btn {
+      width: 3em;
+      height: 3em;
+      padding: 0;
+      border: 0;
+      outline: none;
+
+      overflow: hidden;
+      white-space: nowrap;
+      text-indent: 100%;
+
+   }
+   
+   .lang-navigation {
+   display: block;
+   text-align: center;
+   position: absolute;
+   right: 0.5em;
+   top: 1.25em;
+}
+
+   .navigation-btn {
+      position: fixed;
+      top: 0.5em;
+      left: 0.5em;
+      
+      display: block;
+      background: url("../images/navigation-btn.svg") left center no-repeat;
+      background-size: 3em 3em;
+      z-index: 1;
+   }
+
+   .close-btn {
+      position: absolute;
+      top: 0.5em;
+      left: 0.5em;
+      
+      display: none;
+      background: url("../images/close-btn.svg") left center no-repeat;
+      background-size: 3em 3em;
+   }
+
+   .site-navigation {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      max-height: 0;
+      padding-top: 4em;
+      opacity: 0;
+
+      z-index: -1;
+   }
+
+   .site-navigation .navigation-item:hover,
+   .site-navigation .navigation-item:active {
+      background: #383A3F;
+      color: white;
+   }
+   
+   .site-navigation:target,
+   .site-navigation.open {
+      max-height: 100%;
+      opacity: 1;
+      z-index: 2;
+   }
+
+   .site-navigation .navigation-item {
+      margin: 0;
+      padding: 2em;
+      font-size: 1.25em;
+   }
+
+   .site-navigation:target .close-btn,
+   .site-navigation.open .close-btn {
+      display: block;
+   }
+}
+
+@media (min-width: 48rem) {
+   .site-navigation {
+      display: block;
+      text-align: center;
+   }
+   
+   .lang-navigation {
+      display: block;
+      text-align: center;
+      position: fixed;
+      right: 0.5em;
+      top: 0.5em;
+      font-size: 0.85em;
+   }
+
+   .navigation-btn,
+   .close-btn {
+      display: none;
+   }
+   
+   .social-navigation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+   }
+}
+
+/* Content */
+.site-content {
+   height: 100%;
+   text-align: center;
+}
+
+@media (min-width: 48rem) {
+   .site-content {
+      margin-left: 20rem;
+   }
+}
+
+@media (min-width: 64rem) {
+   .site-content {
+      margin-left: 22rem;
+   }
+}
+
+/* Pages */
+.page {
+   min-height: 100%;
+}
+
+
+.page-title {
+   padding-top: 1.25em;
+}
