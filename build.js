@@ -16,6 +16,7 @@ site.use(permalinks({
 }));
 
 site.use(templates({
+   directory: 'template',
    engine: 'handlebars'
 }));
 
