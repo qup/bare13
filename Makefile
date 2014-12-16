@@ -10,7 +10,7 @@ deploy: build
 	git init . && \
 	git add . && \
 	git commit -m "Update build."; \
-	git push "https://github.com/qup/bare13.git" master:gh-pages --force && \
+	git push "git@github.com:qup/bare13.git" master:gh-pages --force && \
 	rm -rf .git
 
 .PHONY: build
