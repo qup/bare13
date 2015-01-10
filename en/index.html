@@ -1,0 +1,175 @@
+<html>
+<head lang="en">
+   <title>Bare På 13</title>
+   <meta name="description" content="">
+
+   <link href='http://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+   <link href='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' rel='stylesheet' type='text/css'>
+
+   <link href="/stylesheets/screen-931787b900043e6001c053f001709e21.css" rel="stylesheet" type="text/css" />
+
+   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+   <link rel="canonical" href="en" />
+   <meta name="viewport" content="initial-scale=1">
+</head>
+
+<body>
+   <header id="top" class="site-header" role="banner">
+      <a href="#">
+         <h1 class="site-title">
+            <img class="site-logo" src="/images/logo.svg" alt="Bare 13"/>
+         </h1>
+      </a>
+
+      <a class="navigation-btn" href="#nav">Menu</a>
+
+      <nav id="nav" class="site-navigation">
+         <nav class="lang-navigation">
+            <a href="/">NO</a> / <a href="/en">EN</a>
+         </nav>
+
+            <a class="navigation-item" href="#about">About</a>
+            <a class="navigation-item" href="#booking">Booking</a>
+            <a class="navigation-item" href="#contact">Contact</a>
+
+         <a class="close-btn" href="#">Back to content</a>
+      </nav>
+
+      <nav id="social" class="social-navigation">
+         <a href="https://www.facebook.com/barepaa13" class="navigation-item"><img src="/images/facebook.svg" /></a>
+         <a href="https://twitter.com/barepaa13/" class="navigation-item"><img src="/images/twitter.svg" /></a>
+         <a href="http://instagram.com/barepaa13/" class="navigation-item"><img src="/images/instagram.svg" /></a>
+      </nav>
+   </header>
+
+   <main id="content" class="site-content">
+      
+<section class="page">
+<h2 class="page-title hidden" id="about">About</h2>
+<p>
+We serve the best we can, of the best we have, from day to day, no menu, no options. Simple, quick and very delicious.
+</p>
+
+<p>We are open seven days a week.</p>
+
+<p>
+Lunch, 3 serverings<br />
+Monday - Saturday<br />
+12.00 - 15.00<br />
+200,-
+</p>
+
+<p>
+Dinner, 5 servings<br />
+Monday - Saturday<br />
+18.00 - 21.00<br />
+600,-
+</p>
+
+<p>
+Sunday Munch, 3 servings<br />
+Sunday <br />
+14.00 - 18.00<br />
+300,-
+</p>
+
+<p>
+Bar<br />
+Every Day<br />
+14.00 - 01.00
+</p>
+
+</section>
+
+<section class="page">
+   <h2 class="page-title" id="booking">Booking</h2>
+   <p>We accept reservations per phone <br />
+      <a href="tel:+4740002455">(+47) 40 00 24 55</a>
+   </p>
+
+   <p>
+      You can also email us at <br />
+      <a href="mailto:post@barepaa13.no">post@barepaa13.no</a>
+   </p>
+
+   <p>
+      Or you can make an <a class="fancybox" href="http://my.xxltable.com/bare13/index.php?controller=pjFront&amp;action=load&amp;lang=en">online reservation</a>
+   </p>   
+</section>
+
+<section class="page">
+   <iframe width='100%' height='50%' frameBorder='0' src='http://a.tiles.mapbox.com/v3/caspervonb.i5jn8p90/zoomwheel.html'></iframe>
+
+   <h2 class="page-title" id="contact">Contact</h2>
+   <address>
+      Torgallmenningen 13 <br />
+      5014 Bergen, Hordaland
+      Norway
+
+      <p>
+        <a href="mailto:post@barepaa13.no">post@barepaa13.no</a>
+      </p>
+      <p>
+         <a href="tel:+4740002455">(+47) 40 00 24 55</a>
+      </p>
+   </address>
+</section>
+
+   </main>
+
+   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+   <script type="text/javascript">
+      /* Reservation popup */
+	   $(".fancybox").fancybox({
+	      type: "iframe",
+		   maxWidth	: 800,
+		   maxHeight	: 600,
+		   fitToView	: false,
+		   width		: '70%',
+		   height		: '70%',
+		   autoSize	: false,
+		   closeClick	: false,
+		   openEffect	: 'none',
+		   closeEffect	: 'none'
+	   });
+      
+      /* Smooth scroll local links */
+      $('a[href*=#]:not([href=#])').click(function() {
+         $('.site-header .site-navigation').removeClass('open');
+               
+         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+               $('html, body').animate({
+                  scrollTop: target.offset().top
+                 }, 250);
+                 
+           return false;
+         }
+       }
+     });
+
+      /* Open site navigation */
+      $('.site-header .navigation-btn').on('click', function(ev) {
+         $('.site-header .site-navigation').addClass('open');
+         return false;
+      });
+
+      /* Close site navigation */
+      $('.site-header .close-btn').on('click', function(ev) {
+         $('.site-header .site-navigation').removeClass('open');
+         return false;
+      });
+      
+      /* Popup links with data-role popup */
+      $('a[data-role*=popup]').on('click', function(ev) {
+         return false;
+      });
+   </script>
+</body>
+</html>
